@@ -1,0 +1,754 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(DashForm)
+Gui.Form..Caption("Training Maintenance 6756")
+Gui.Form..Size(1275,710)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..BarRefreshButton(True)
+Gui.Form..BarHelpButton(True,"","Training Validation on Job Sequence","",1.0.0,"5/26/2022 7:09:05 PM","",0,0,True)
+Gui.Form..BarExportButton(True)
+Gui.Form..Event(RefreshClick,Form_RefreshClick)
+Gui.Form..Event(ExportClick,Form_ExportClick)
+Gui.Form.txtEmp.Create(TextBox,"",True,65,20,0,12,24,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtEmp.TabStop(True)
+Gui.Form.txtEmp.TabIndex(1)
+Gui.Form.lbl1.Create(Label,"Employee ID",True,60,13,0,12,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.cmdBrowseEmp.Create(Button)
+Gui.Form.cmdBrowseEmp.Enabled(True)
+Gui.Form.cmdBrowseEmp.Visible(True)
+Gui.Form.cmdBrowseEmp.Zorder(0)
+Gui.Form.cmdBrowseEmp.Size(24,20)
+Gui.Form.cmdBrowseEmp.Position(236,24)
+Gui.Form.cmdBrowseEmp.Caption("^")
+Gui.Form.cmdBrowseEmp.FontName("Tahoma")
+Gui.Form.cmdBrowseEmp.FontSize(8.25)
+Gui.Form.cmdBrowseEmp.TabStop(True)
+Gui.Form.cmdBrowseEmp.TabIndex(3)
+Gui.Form.cmdBrowseEmp.Event(Click,cmdBrowseEmp_Click)
+Gui.Form.lbl2.Create(Label,"Trainer ID",True,48,13,0,293,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.txtTrainer.Create(TextBox,"",True,65,20,0,293,24,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtTrainer.TabStop(True)
+Gui.Form.txtTrainer.TabIndex(4)
+Gui.Form.cmdBrowseTrainer.Create(Button)
+Gui.Form.cmdBrowseTrainer.Enabled(True)
+Gui.Form.cmdBrowseTrainer.Visible(True)
+Gui.Form.cmdBrowseTrainer.Zorder(0)
+Gui.Form.cmdBrowseTrainer.Size(24,20)
+Gui.Form.cmdBrowseTrainer.Position(516,24)
+Gui.Form.cmdBrowseTrainer.Caption("^")
+Gui.Form.cmdBrowseTrainer.FontName("Tahoma")
+Gui.Form.cmdBrowseTrainer.FontSize(8.25)
+Gui.Form.cmdBrowseTrainer.TabStop(True)
+Gui.Form.cmdBrowseTrainer.TabIndex(6)
+Gui.Form.cmdBrowseTrainer.Event(Click,cmdBrowseTrainer_Click)
+Gui.Form.txtWC.Create(TextBox,"",True,69,20,0,561,24,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtWC.TabStop(True)
+Gui.Form.txtWC.TabIndex(7)
+Gui.Form.lbl3.Create(Label,"Work Center",True,61,13,0,562,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl3.BorderStyle(0)
+Gui.Form.cmdBrowseWC.Create(Button)
+Gui.Form.cmdBrowseWC.Enabled(True)
+Gui.Form.cmdBrowseWC.Visible(True)
+Gui.Form.cmdBrowseWC.Zorder(0)
+Gui.Form.cmdBrowseWC.Size(24,20)
+Gui.Form.cmdBrowseWC.Position(791,24)
+Gui.Form.cmdBrowseWC.Caption("^")
+Gui.Form.cmdBrowseWC.FontName("Tahoma")
+Gui.Form.cmdBrowseWC.FontSize(8.25)
+Gui.Form.cmdBrowseWC.TabStop(True)
+Gui.Form.cmdBrowseWC.TabIndex(9)
+Gui.Form.cmdBrowseWC.Event(Click,cmdBrowseWC_Click)
+Gui.Form.ddlStatus.Create(DropDownList)
+Gui.Form.ddlStatus.Enabled(True)
+Gui.Form.ddlStatus.Visible(True)
+Gui.Form.ddlStatus.Zorder(0)
+Gui.Form.ddlStatus.Size(102,20)
+Gui.Form.ddlStatus.Position(54,197)
+Gui.Form.ddlStatus.FontName("Tahoma")
+Gui.Form.ddlStatus.FontSize(8.25)
+Gui.Form.ddlStatus.TabStop(True)
+Gui.Form.ddlStatus.TabIndex(11)
+Gui.Form.lbl4.Create(Label,"Status",True,31,13,0,14,200,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl4.BorderStyle(0)
+Gui.Form.txtNote.Create(TextBoxR)
+Gui.Form.txtNote.Enabled(True)
+Gui.Form.txtNote.Visible(True)
+Gui.Form.txtNote.Zorder(0)
+Gui.Form.txtNote.Size(1255,112)
+Gui.Form.txtNote.Position(12,74)
+Gui.Form.txtNote.FontName("Tahoma")
+Gui.Form.txtNote.FontSize(8.25)
+Gui.Form.txtNote.BackColor(11200750)
+Gui.Form.txtNote.Anchor(13)
+Gui.Form.txtNote.TabStop(True)
+Gui.Form.txtNote.TabIndex(10)
+Gui.Form.cmdAdd.Create(Button)
+Gui.Form.cmdAdd.Enabled(True)
+Gui.Form.cmdAdd.Visible(True)
+Gui.Form.cmdAdd.Zorder(0)
+Gui.Form.cmdAdd.Size(91,20)
+Gui.Form.cmdAdd.Position(368,197)
+Gui.Form.cmdAdd.Caption("Add")
+Gui.Form.cmdAdd.FontName("Tahoma")
+Gui.Form.cmdAdd.FontSize(8.25)
+Gui.Form.cmdAdd.TabStop(True)
+Gui.Form.cmdAdd.TabIndex(13)
+Gui.Form.cmdAdd.SvgPicture("icon_add_color")
+Gui.Form.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.Form.gsTraining.Create(GsGridControl)
+Gui.Form.gsTraining.Enabled(True)
+Gui.Form.gsTraining.Visible(True)
+Gui.Form.gsTraining.Zorder(0)
+Gui.Form.gsTraining.Size(1253,410)
+Gui.Form.gsTraining.Position(12,225)
+Gui.Form.gsTraining.Anchor(15)
+Gui.Form.gsTraining.TabStop(True)
+Gui.Form.gsTraining.TabIndex(14)
+Gui.Form.gsTraining.Event(CellValueChanged,gsTraining_CellValueChanged)
+Gui.Form.gsTraining.Event(RowCellClick,gsTraining_RowCellClick)
+Gui.Form.lbl5.Create(Label,"Note",True,23,13,0,12,57,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl5.BorderStyle(0)
+Gui.Form.txtEmpName.Create(TextBox,"",True,150,20,0,83,24,False,0,"Tahoma",8.25,,1)
+Gui.Form.txtEmpName.TabStop(True)
+Gui.Form.txtEmpName.TabIndex(2)
+Gui.Form.txtTrainerName.Create(TextBox,"",True,150,20,0,362,24,False,0,"Tahoma",8.25,,1)
+Gui.Form.txtTrainerName.TabStop(True)
+Gui.Form.txtTrainerName.TabIndex(5)
+Gui.Form.txtWCDescr.Create(TextBox,"",True,153,20,0,634,24,False,0,"Tahoma",8.25,,1)
+Gui.Form.txtWCDescr.TabStop(True)
+Gui.Form.txtWCDescr.TabIndex(8)
+Gui.Form.lbl6.Create(Label,"Name",True,27,13,0,84,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl6.BorderStyle(0)
+Gui.Form.lbl7.Create(Label,"Name",True,27,13,0,362,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl7.BorderStyle(0)
+Gui.Form.lbl8.Create(Label,"WC Description",True,73,13,0,634,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl8.BorderStyle(0)
+Gui.Form.dtpTrainingDate.Create(DatePicker)
+Gui.Form.dtpTrainingDate.Enabled(True)
+Gui.Form.dtpTrainingDate.Visible(True)
+Gui.Form.dtpTrainingDate.Zorder(0)
+Gui.Form.dtpTrainingDate.Size(100,20)
+Gui.Form.dtpTrainingDate.Position(244,197)
+Gui.Form.dtpTrainingDate.CheckBox(False)
+Gui.Form.dtpTrainingDate.FontName("Tahoma")
+Gui.Form.dtpTrainingDate.FontSize(8.25)
+Gui.Form.dtpTrainingDate.TabStop(True)
+Gui.Form.dtpTrainingDate.TabIndex(12)
+Gui.Form.lbl9.Create(Label,"Training Date",True,64,13,0,174,200,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl9.BorderStyle(0)
+Gui.Form.lookup1.Create(Lookup)
+Gui.Form.lookup1.Enabled(True)
+Gui.Form.lookup1.PopulateMode(0)
+Gui.Form.lookup1.Title("GSS Lookup")
+Gui.Form.lookup1.StringBasis("")
+Gui.Form.lookup1.FileBasis("")
+Gui.Form.lookup1.ColumnDelim("")
+Gui.Form.lookup1.RowDelim("")
+Gui.Form.lookup1.PreferredStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.bPassedFirstLoad.Declare
+v.Global.bExporting.Declare
+v.Global.bRefreshing.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'BN, May 2022
+'This project will validate that an employee has been trained on a work center before they are permitted to clock into a sequence for that work center at the GUI
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+f.Intrinsic.Control.Try
+	v.Local.bInGroup.Declare
+	v.Local.sWC.Declare
+	v.Local.sEmp.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+		
+	'At GUI, Add Job hook
+	F.Intrinsic.Control.If(V.Caller.Hook,=,15934)	
+		'Job: Variable.Passed.009000
+		'Suffix: Variable.Passed.009001
+		'Seq: Variable.Passed.009002	
+		v.Local.sWC.Set(Variable.Passed.009004)
+		v.Local.sEmp.Set(Variable.Passed.009993)
+		
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select Emp,rtrim(e.Name) as EmpName,Trainer,rtrim(t.Name) as TrainerName,WC,rtrim(WC_Name) as WCDescr,TrainingDate,Note,Status from GCG_6756_Training g left join Employee_mstr e on g.Emp = e.Employee left join Employee_mstr t on g.Trainer = t.Employee left join WorkCenters w on g.WC = w.Machine where rtrim(g.Emp) = '{0}' and rtrim(g.WC) = '{1}'",v.Local.sEmp.Trim,v.Local.sWC.Trim,v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtTr","conx",v.Local.sSQL,True)
+		
+		'No record found
+		f.Intrinsic.Control.If(v.DataTable.dtTr.RowCount,=,0)			
+			v.Passed.777777.Set(1)
+			f.Intrinsic.Control.CallSub(Send_Email,"bRecord",False,"sEmp",v.Local.sEmp,"sWC",v.Local.sWC)
+			f.Intrinsic.UI.Msgbox("No Training Record Found","Invalid Work Center Training")
+
+		'There are records then check if there is record = Approved
+		f.Intrinsic.Control.Else			
+			f.Data.DataTable.Select("dtTr","Status = 'Approved'",v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,=,"***NORETURN***")
+				v.Passed.777777.Set(1)
+				f.Intrinsic.UI.Msgbox("Training Record Found but has not been approved","Invalid Work Center Training")
+				f.Intrinsic.Control.CallSub(Send_Email,"bRecord",True,"sEmp",v.Local.sEmp,"sWC",v.Local.sWC)				
+			f.Intrinsic.Control.EndIf			
+		f.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.CallSub(Unload)
+	F.Intrinsic.Control.EndIf
+	
+	'For admin at maintenance screen
+	f.Global.Security.IsInGroup(v.Caller.User,"TRAINADM",v.Caller.CompanyCode,v.Local.bInGroup)
+	f.Intrinsic.Control.If(v.Local.bInGroup.Not)
+		f.Intrinsic.UI.Msgbox("User is not in security group to use the program.","Unload")
+		f.Intrinsic.Control.CallSub(Unload)
+	f.Intrinsic.Control.EndIf
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	
+	'Check table
+	f.Intrinsic.Control.CallSub(CheckTable)
+	
+	'Bind Status
+	gui.Form.ddlStatus.AddItem("Approved")
+	gui.Form.ddlStatus.AddItem("Not Approved")
+	gui.Form.ddlStatus.AddItem("On Hold")
+	gui.Form.ddlStatus.AddItem("Probation")
+	gui.Form.ddlStatus.ListIndex(0)
+	
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(True)	
+	
+	f.Intrinsic.Control.CallSub(LoadData)
+
+	gui.Form..Show
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Send_email.Start
+f.Intrinsic.Control.Try
+	v.Local.sWC.Declare
+	v.Local.sEmp.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.iUser.Declare
+	v.Local.sSubject.Declare
+	v.Local.sSender.Declare
+	v.Local.sBody.Declare
+	V.Local.sGroupEmails.Declare
+	v.Local.sRecipient.Declare
+	
+	v.Local.sEmp.Set(v.Args.sEmp)
+	v.Local.sWC.Set(v.Args.sWC)
+	
+	'Sender	
+	F.Global.Security.GetUserEmail("SUPERVSR",V.Caller.CompanyCode,V.Local.sSender)
+	F.Intrinsic.Control.If(V.Local.sSender.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Please setup email for user SUPERVSR.","No Email Found")
+		f.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("{0}*!*",V.Local.sSender,V.Local.sSender)	
+
+	'Recipients
+	F.Global.Security.GetGroupEmails("TRAINERS",V.Caller.CompanyCode,V.Local.sRecipient)
+	F.Intrinsic.Control.If(V.Local.sRecipient,=,"")
+		F.Intrinsic.UI.Msgbox("No emails in group TRAINERS","Group Emails")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf		
+	F.Intrinsic.String.Split(V.Local.sRecipient,"*!*",V.Local.sRecipient)
+	F.Intrinsic.String.RemoveArrayDuplicates(V.Local.sRecipient,V.Local.sRecipient)
+	F.Intrinsic.String.Join(V.Local.sRecipient,"@!@*!*",v.Local.sRecipient)
+	V.Local.sRecipient.RedimPreserve(0,0)
+	F.Intrinsic.String.Build("*!*{0}",V.Local.sRecipient,V.Local.sRecipient)		
+
+	'Build Status Body
+	f.Intrinsic.Control.If(v.Args.bRecord)
+		f.Data.DataView.Create("dtTr","vTr")
+		f.Data.DataView.ToString("dtTr","vTr","Emp*!*EmpName*!*Trainer*!*TrainerName*!*WC*!*WCDescr*!*TrainingDate*!*Status*!*Note",", ",v.Ambient.NewLine,v.Local.sBody)
+		f.Intrinsic.String.Build("No Approved training record found for employee {0} at work center {1}. Here is the list of current records: {3}Emp, Emp Name, Trainer, Trainer Name, WC, WC Descr, Training Date, Status, Note:{3}{2}",v.Local.sEmp,v.Local.sWC,v.Local.sBody,v.Ambient.NewLine,v.Local.sBody)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("No training record found for employee {0} at work center {1}",v.Local.sEmp,v.Local.sWC,v.Local.sBody)
+	f.Intrinsic.Control.EndIf
+	'Email
+	F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Local.iUser)
+	f.Intrinsic.String.Build("Invalid Training - Employee {0} - Work Center {1} ",v.Local.sEmp,v.Local.sWC,v.Local.sSubject)
+	F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUser,"Training Validation",v.Local.sSubject,v.Local.sSender,v.Local.sRecipient,v.Local.sBody)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Send_email.End
+
+Program.Sub.Catching.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	F.Intrinsic.String.Build("Project: {5} {0}Subroutine: {1}{0}Error Occurred {2} with description {3}{0}GAB Version: {4}",V.Ambient.Newline,V.Args.SUB,V.Args.errorno,V.Args.errordesc,V.Ambient.GABVersion,v.Caller.ScriptFile,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	
+	f.Intrinsic.Control.CallSub(Unload)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.Catching.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try	
+
+	f.Intrinsic.Control.If(v.ODBC.conx.Exists)
+		F.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.End 
+	
+f.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.If(V.Global.bPassedFirstLoad)
+	F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.EndIf
+f.Intrinsic.Control.CallSub(Unload)
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.CheckTable.Start
+f.Intrinsic.Control.Try
+	V.Local.bRet.Declare
+
+	F.ODBC.Connection!conx.TableExists("GCG_6756_Training",v.Local.bRet)
+		F.Intrinsic.Control.If(v.Local.bRet,=,false)		
+			F.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6756_Training ( Emp CHAR(6), Trainer CHAR(6), WC CHAR(4), TrainingDate Date, Note LONGVARCHAR, Status VarCHAR(20) );")
+			F.ODBC.Connection!conx.Execute("CREATE UNIQUE NOT MODIFIABLE INDEX GCG_6756_01   ON GCG_6756_Training ( Emp, Trainer, WC);")
+	F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.CheckTable.End
+
+#Region "Browsers"
+
+Program.Sub.cmdBrowseEmp_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRet.Declare
+	
+	f.Intrinsic.UI.CommonBrowser(51,"",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,<>,v.Ambient.cancel)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.Form.txtEmp.Text(v.Local.sRet(0).Trim)
+		gui.Form.txtEmpName.Text(v.Local.sRet(1).Trim)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseEmp_Click.End
+
+Program.Sub.cmdBrowseTrainer_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRet.Declare
+	
+	f.Intrinsic.UI.CommonBrowser(51,"",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,<>,v.Ambient.cancel)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.Form.txtTrainer.Text(v.Local.sRet(0).Trim)
+		gui.Form.txtTrainerName.Text(v.Local.sRet(1).Trim)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseTrainer_Click.End
+
+Program.Sub.cmdBrowseWC_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRet.Declare
+	
+	f.Intrinsic.UI.CommonBrowser(400,"",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,<>,v.Ambient.cancel)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.Form.txtWC.Text(v.Local.sRet(0).Trim)
+		gui.Form.txtWCDescr.Text(v.Local.sRet(1).Trim)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseWC_Click.End
+#End Region 'Browsers
+
+Program.Sub.cmdAdd_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.sEmp.Declare
+	v.Local.sTrainer.Declare
+	v.Local.sWC.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.dTrainningDate.Declare
+	v.Local.sNote.Declare
+	v.Local.sStatus.Declare
+	v.Local.sEmpName.Declare
+	v.Local.sTrainerName.Declare
+	v.Local.sWCDescr.Declare
+	
+	'Validate Emp, Trainer, WC
+	v.Local.sEmp.Set(v.Screen.Form!txtEmp.Text.Trim)
+	v.Local.sTrainer.Set(v.Screen.Form!txtTrainer.Text.Trim)
+	v.Local.sWC.Set(v.Screen.Form!txtWC.Text.Trim)
+	v.Local.dTrainningDate.Set(v.Screen.Form!dtpTrainingDate.Value)
+	v.Local.sNote.Set(v.Screen.Form!txtNote.Text.Trim)
+	v.Local.sStatus.Set(v.Screen.Form!ddlStatus.Text)	
+	
+	'Emp
+	f.Intrinsic.String.Build("Select Top 1 Name from Employee_Mstr where rtrim(Employee) = '{0}'",v.Local.sEmp.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Employee")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Local.sEmpName.Set(v.Local.sRet.Trim)
+	'TrainerName
+	f.Intrinsic.String.Build("Select Top 1 Name from Employee_Mstr where rtrim(Employee) = '{0}'",v.Local.sTrainer.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Trainer")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Local.sTrainerName.Set(v.Local.sRet.Trim)	
+	'WC
+	f.Intrinsic.String.Build("Select Top 1 WC_Name from WorkCenters where rtrim(Machine) = '{0}'",v.Local.sWC.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Work Center")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Local.sWCDescr.Set(v.Local.sRet.Trim)		
+		
+	f.Intrinsic.String.Build("Select top 1 Emp from GCG_6756_Training where rtrim(Emp) = '{0}' and rtrim(Trainer) = '{1}' and rtrim(WC) = '{2}'",v.Local.sEmp.PSQLFriendly,v.Local.sTrainer.PSQLFriendly,v.Local.sWC.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		'Insert		
+		f.Intrinsic.String.Build("Insert into GCG_6756_Training (Emp,Trainer,WC,TrainingDate,Note,Status) values ('{0}','{1}','{2}','{3}','{4}','{5}')",v.Local.sEmp.PSQLFriendly,v.Local.sTrainer.PSQLFriendly,v.Local.sWC.PSQLFriendly,v.Local.dTrainningDate.PervasiveDate,v.Local.sNote.PSQLFriendly,v.Local.sStatus.PSQLFriendly,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		f.Data.DataTable.AddRow("dtTrain","Emp",v.Local.sEmp,"EmpName",v.Local.sEmpName,"Trainer",v.Local.sTrainer,"TrainerName",v.Local.sTrainerName,"WC",v.Local.sWC,"WCDescr",v.Local.sWCDescr,"TrainingDate",v.Local.dTrainningDate,"Note",v.Local.sNote,"Status",v.Local.sStatus)
+		
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("Record exists for Employee {0} | Trainer {1} | Work Center {2}.",v.Local.sEmp,v.Local.sTrainer,v.Local.sWC,v.Local.sRet)
+		f.Intrinsic.UI.Msgbox(v.Local.sRet,"Duplicate Data")	
+	f.Intrinsic.Control.EndIf		
+	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.LoadData.Start
+f.Intrinsic.Control.Try
+	V.Local.bRet.Declare
+	v.Local.sValue.Declare
+	v.Local.sValue2.Declare
+	v.Local.sValue3.Declare
+	v.Local.sProp.Declare
+
+	f.Intrinsic.Control.If(v.DataTable.dtTrain.Exists)
+		f.Data.DataTable.Close("dtTrain")
+		gui.Form.gsTraining.ClearRows("gvTrain")
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Global.bPassedFirstLoad)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.CreateFromSQL("dtTrain","conx","Select Emp,rtrim(e.Name) as EmpName,Trainer,rtrim(t.Name) as TrainerName,WC,rtrim(WC_Name) as WCDescr,TrainingDate,Note,Status from GCG_6756_Training g left join Employee_mstr e on g.Emp = e.Employee left join Employee_mstr t on g.Trainer = t.Employee left join WorkCenters w on g.WC = w.Machine order by Emp,Trainer",True)
+	f.Data.DataTable.AddColumn("dtTrain","DeleteRow","String","Delete")
+	
+	gui.Form.gsTraining.AddGridviewFromDatatable("gvTrain","dtTrain")
+	
+	gui.Form.gsTraining.SuspendLayout
+	
+	gui.Form.gsTraining.SetGridViewProperty("gvTrain","MultiSelect",False)
+	gui.Form.gsTraining.SetGridViewProperty("gvTrain","AllowSort",True)
+	gui.Form.gsTraining.SetGridViewProperty("gvTrain","AllowFilter",True)
+	gui.Form.gsTraining.SetGridViewProperty("gvTrain","OptionsDetailShowDetailTabs",False)
+	gui.Form.gsTraining.SetGridViewProperty("gvTrain","OptionsViewShowGroupPanel",True)
+	gui.Form.gsTraining.SetGridViewProperty("gvTrain","EnableAppearanceOddRow",True)
+	gui.Form.gsTraining.SetGridviewProperty("gvTrain","OptionsFilterUseNewCustomFilterDialog",True)
+	gui.Form.gsTraining.SetGridviewProperty("gvTrain","OptionsViewColumnAutoWidth",False)
+	gui.Form.gsTraining.SetGridviewProperty("gvTrain","AllowColumnResizing",True)	
+	gui.Form.gsTraining.SetGridviewProperty("gvTrain","ColumnPanelRowHeight","50")
+	gui.Form.gsTraining.SetGridviewProperty("gvTrain","OptionsViewRowAutoHeight",True)	
+	gui.Form.gsTraining.SetGridviewProperty("gvTrain",v.Enum.GridViewPropertyNames!SuppressNothingDates,True)		
+	
+	f.Intrinsic.Control.CallSub(Bulk_Format,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format,"sProp","HeaderFontBold","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format,"sProp","HeaderWordWrap","sValue","wrap")
+	f.Intrinsic.Control.CallSub(Bulk_Format,"sProp","HeaderVAlignment","sValue","Top")
+
+	v.Local.sProp.Set("HeaderHAlignment")
+	v.Local.sValue.Set("near")
+	v.Local.sValue2.Set("center")
+	v.Local.sValue3.Set("far")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Emp",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","EmpName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Trainer",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainerName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WC",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WCDescr",v.Local.sProp,v.Local.sValue)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow",v.Local.sProp,v.Local.sValue2)	
+	
+	v.Local.sProp.Set("CellHAlignment")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Emp",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","EmpName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Trainer",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainerName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WC",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WCDescr",v.Local.sProp,v.Local.sValue)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow",v.Local.sProp,v.Local.sValue2)	
+	
+	'Caption
+	v.Local.sProp.Set("Caption")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Emp",v.Local.sProp,"Employee ID")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","EmpName",v.Local.sProp,"Employee Name")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Trainer",v.Local.sProp,"Trainer ID")	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainerName",v.Local.sProp,"Trainer Name")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WC",v.Local.sProp,"Work Center")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WCDescr",v.Local.sProp,"Work Center Description")	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate",v.Local.sProp,"Training Date")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note",v.Local.sProp,"Note")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status",v.Local.sProp,"Status")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow",v.Local.sProp,"Delete")
+	
+	'CellWordWrap
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note","CellWordWrap","Wrap")
+	
+	'Width
+	v.Local.sProp.Set("Width")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Emp",v.Local.sProp,"85")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","EmpName",v.Local.sProp,"120")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Trainer",v.Local.sProp,"85")	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainerName",v.Local.sProp,"120")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WC",v.Local.sProp,"85")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WCDescr",v.Local.sProp,"180")	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate",v.Local.sProp,"85")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note",v.Local.sProp,"290")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status",v.Local.sProp,"85")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow",v.Local.sProp,"85")	
+	
+	v.Local.sProp.Set("DisplayCustomDatetime")
+	v.Local.sValue.Set("d")	
+	Gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate",v.local.sProp,v.local.sValue)		
+	
+	'AllowEdit
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status","AllowEdit",True)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status","ReadOnly",False)
+	gui.Form.gsTraining.ColumnEdit("gvTrain","Status","DropdownList","Approved*!*Not Approved*!*On Hold*!*Probation")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate","AllowEdit",True)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate","ReadOnly",False)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note","AllowEdit",True)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note","ReadOnly",False)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow","AllowEdit",False)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow","ReadOnly",True)	
+	
+	'Color
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note","CellBackColor","Beige")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status","CellBackColor","LightGray")
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow","CellForeColor","Red")
+	
+	gui.Form.gsTraining.AddStyleFormatCondition("gvTrain","Status","A","equal","Approved")
+	gui.Form.gsTraining.SetStyleFormatConditionProperty("gvTrain","Status","A","Forecolor","Blue")
+	gui.Form.gsTraining.AddStyleFormatCondition("gvTrain","Status","N","equal","Not Approved")
+	gui.Form.gsTraining.SetStyleFormatConditionProperty("gvTrain","Status","N","Forecolor","Red")
+	gui.Form.gsTraining.AddStyleFormatCondition("gvTrain","Status","O","equal","On Hold")
+	gui.Form.gsTraining.SetStyleFormatConditionProperty("gvTrain","Status","O","Forecolor","DarkOrange")		
+	gui.Form.gsTraining.AddStyleFormatCondition("gvTrain","Status","P","equal","Probation")
+	gui.Form.gsTraining.SetStyleFormatConditionProperty("gvTrain","Status","P","Forecolor","Green")	
+	
+	gui.Form.gsTraining.ResumeLayout
+
+	gui.Form.gsTraining.MainView("gvTrain")	
+	f.Intrinsic.Control.CallSub(Deserialize)
+	v.Global.bPassedFirstLoad.Set(True)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.LoadData.End
+
+Program.Sub.Serialize.Start
+f.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare
+	
+	gui.Form.gsTraining.Serialize("GVTRAIN",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVTRAIN",6756,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+f.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sSerialize.Declare		
+	
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVTRAIN",6756,1001,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")	
+		gui.Form.gsTraining.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf		
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Deserialize.End
+
+#Region "Grid Events"
+Program.Sub.gsTraining_CellValueChanged.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.dDate.Declare
+	v.Local.sStatus.Declare
+	v.Local.sNote.Declare
+	v.Local.sEmp.Declare
+	v.Local.sTrainer.Declare
+	v.Local.sWC.Declare
+
+	v.Local.sEmp.set(v.Datatable.dtTrain(v.Args.RowIndex).Emp!FieldValString)
+	v.Local.sTrainer.set(v.Datatable.dtTrain(v.Args.RowIndex).Trainer!FieldValString)
+	v.Local.sWC.set(v.Datatable.dtTrain(v.Args.RowIndex).WC!FieldValString)	
+	v.Local.dDate.set(v.Datatable.dtTrain(v.Args.RowIndex).TrainingDate!FieldValString)
+	v.Local.sStatus.set(v.Datatable.dtTrain(v.Args.RowIndex).Status!FieldValString)
+	v.Local.sNote.set(v.Datatable.dtTrain(v.Args.RowIndex).Note!FieldValString)
+	
+	f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+		f.Intrinsic.Control.Case("TRAININGDATE")
+			F.Intrinsic.String.Build("Update GCG_6756_Training set TrainingDate = '{0}' where Emp = '{1}' and Trainer = '{2}' and WC = '{3}'",v.Local.dDate.PervasiveDate,v.Local.sEmp,v.Local.sTrainer,v.Local.sWC,v.Local.sSQL)		
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		F.Intrinsic.Control.Case("NOTE")
+			F.Intrinsic.String.Build("Update GCG_6756_Training set Note = '{0}' where Emp = '{1}' and Trainer = '{2}' and WC = '{3}'",v.Local.sNote.PSQLFriendly,v.Local.sEmp,v.Local.sTrainer,v.Local.sWC,v.Local.sSQL)
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		F.Intrinsic.Control.Case("STATUS")
+			F.Intrinsic.String.Build("Update GCG_6756_Training set Status = '{0}' where Emp = '{1}' and Trainer = '{2}' and WC = '{3}'",v.Local.sStatus.PSQLFriendly,v.Local.sEmp,v.Local.sTrainer,v.Local.sWC,v.Local.sSQL)
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.gsTraining_CellValueChanged.End
+
+Program.Sub.gsTraining_RowCellClick.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sEmp.Declare
+	v.Local.sTrainer.Declare
+	v.Local.sWC.Declare
+	v.Local.sRet.Declare
+	v.Local.dTrainningDate.Declare
+	v.Local.sNote.Declare
+	v.Local.sStatus.Declare	
+	
+	f.Intrinsic.Control.If(v.Args.Column,=,"DeleteRow")
+		v.Local.sEmp.Set(v.DataTable.dtTrain(v.Args.RowIndex).Emp!FieldValTrim)
+		v.Local.sTrainer.Set(v.DataTable.dtTrain(v.Args.RowIndex).Trainer!FieldValTrim)
+		v.Local.sWC.Set(v.DataTable.dtTrain(v.Args.RowIndex).WC!FieldValTrim)
+		
+		f.Intrinsic.String.Build("Delete from GCG_6756_Training where rtrim(Emp) = '{0}' and rtrim(Trainer) = '{1}' and rtrim(WC) = '{2}'",v.Local.sEmp.PSQLFriendly,v.Local.sTrainer.PSQLFriendly,v.Local.sWC.PSQLFriendly,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Data.DataTable.DeleteRow("dtTrain",v.Args.RowIndex)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.gsTraining_RowCellClick.End
+#End Region 'Grid Events
+
+
+Program.Sub.Bulk_Format.Start
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Emp",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","EmpName",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Trainer",v.Args.sProp,v.Args.sValue)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainerName",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WC",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","WCDescr",v.Args.sProp,v.Args.sValue)	
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","TrainingDate",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Note",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","Status",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsTraining.SetColumnProperty("gvTrain","DeleteRow",v.Args.sProp,v.Args.sValue)		
+Program.Sub.Bulk_Format.End
+
+Program.Sub.Form_RefreshClick.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Global.bRefreshing)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Global.bRefreshing.Set(True)	
+	f.Intrinsic.Control.CallSub(LoadData)
+	v.Global.bRefreshing.Set(False)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_RefreshClick.End
+
+Program.Sub.Form_ExportClick.Start
+F.Intrinsic.Control.Try	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.sMsg.Declare
+
+	f.Intrinsic.Control.If(v.Global.bPassedFirstLoad.Not)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.bExporting)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Global.bExporting.Set(True)
+
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\TrainingList{1}.xlsx",V.Caller.LocalGssTempDir,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)		
+		gui.Form.gsTraining.Export(V.Local.sFileExport,"xlsx")				
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\TrainingList{1}.csv",V.Caller.LocalGssTempDir,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)		
+		gui.Form.gsTraining.Export(V.Local.sFileExport,"csv")		
+	F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	v.Global.bExporting.Set(False)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Form_ExportClick.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$bnguyen$}$20220527113713949$}$tqzwddZCkmoVRWHEL6DZymEEseDhOdziTqKUqTa1fewQ3UfkCHJjL8gGlXM2U7UGaRXGroq1Wg0=
+Program.Sub.Comments.End
